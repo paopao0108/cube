@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import Cube from './components/Cube.vue'
+import Cube from './components/Cube.vue';
 
 export default {
   name: 'app',
   components: {
-    Cube
-  }
-}
+    Cube,
+  },
+};
 </script>
 
 <style>

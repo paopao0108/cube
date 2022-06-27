@@ -1,11 +1,11 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: ['plugin:vue/essential', '@vue/standard'],
   parserOptions: {
-    parser: '@babel/eslint-parser'
+    parser: '@babel/eslint-parser',
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -15,6 +15,15 @@ module.exports = {
     // 第1个参数：error表示检测到不符合规则时会标出错误，0表示不会标出错误
     'space-before-function-paren': [0, 'never'],
     'vue/multi-word-component-names': 0,
-    semi: 0
-  }
-}
+    'semi': 0,
+    'quote-props': 0,
+    // 禁用prefer-const
+    'prefer-const': 0,
+    'no-unused-vars': 1,
+    'no-multiple-empty-lines': 1,
+    'comma-dangle': 0,
+    'object-curly-spacing': 1,
+    'no-multi-spaces': 1,
+    'no-trailing-spaces': 1,
+  },
+};
