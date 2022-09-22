@@ -1,0 +1,58 @@
+.cube-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  #content {
+    position: relative;
+    left: 0;
+    top: 0;
+    // width: var(size) * 3 * 1px;
+    // height: var(size) * 3 * 1px;
+    // border: 1px solid black;
+    box-sizing: border-box;
+    margin: auto;
+    transform-style: preserve-3d;
+    // transform-origin: 50% 50% -135px;
+    transform-origin: 50% 50% calc(var(--count) * var(--size) / 2 * -1px);
+    transform: var(--transform);
+    transition: transform 1s;
+    .block {
+      position: absolute;
+      box-sizing: border-box;
+      transform-style: preserve-3d;
+
+      // transition用于动画
+      transition: transform var(--animTime); // 指定transform进行动画，并在1s内完成
+      div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #000;
+        border-radius: 8px;
+        box-sizing: border-box;
+      }
+      .front {
+      }
+      .back {
+        transform: translateZ(calc(-1 * var(--size)));
+      }
+      .top {
+        transform-origin: bottom; // 旋转中心
+        transform: translateY(calc(-1 * var(--size))) rotateX(90deg);
+      }
+      .bottom {
+        transform-origin: top;
+        transform: translateY(var(--size)) rotateX(-90deg);
+      }
+      .left {
+        transform-origin: right;
+        transform: translateX(calc(-1 * var(--size))) rotateY(-90deg);
+      }
+      .right {
+        transform-origin: left;
+        transform: translateX(var(--size)) rotateY(90deg);
+      }
+    }
+  }
+}
